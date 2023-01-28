@@ -18,7 +18,7 @@ Operations or operands improperness define the causes. A consequence is the resu
 A BF class is a taxonomic category of a weakness type, defined by:
 
 *   A set of operations
-*   All valid cause → consequence relations
+*   All valid cause→consequence relations
 *   A set of attributes.
 
-The taxonomy of a particular bug or weakness is based on one BF class. Its description is an instance of a taxonomic BF class with one cause, one operation, one consequence, and their attributes. The operation binds the cause–consequence relation – e.g., deallocation via a dangling pointer leads to a failure known as double free.
+The taxonomy of a particular bug or weakness is based on one BF class. Its description is an instance of a taxonomic BF class with one cause, one operation, one consequence, and their attributes. The operation binds the cause→consequence relation – e.g., deallocation via a dangling pointer leads to a failure known as double free.
