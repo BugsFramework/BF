@@ -2,7 +2,10 @@ weight: 4
 bookCollapseSection: false
 title: "Grammar"
 ---
-# BF Grammar -- for _DAT, _INP, MEM clusters only for now
+# BF Grammar
+
+BF Grammar for all developed Clusters: Data Type Bugs Classes (_DAT), Input/Outpu Bugs Classes (_INP), Memory Bugs Classes (_MEM)
+(need to add Attributes)
 
 `START := Vulnerability Converge`
 `Vulnerability := Defect Operation Error`
