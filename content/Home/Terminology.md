@@ -37,10 +37,5 @@ Using our definitions, we formalize at a high-level a vulnerability description 
 
 `Vulnerability := Bug Operation Error`
 
-`Error := Fault Operation Error | `
-
-         `FinalError `  
-`Converge :=  Vulnerability Converge | `
-
-             `Failure END`
-
+`Error := Fault Operation Error | FinalError `  
+`Converge :=  Vulnerability Converge | Failure END`
