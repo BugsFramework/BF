@@ -1,0 +1,32 @@
+BF Grammar
+
+`START := Vulnerability Converge`
+`Vulnerability := Defect Operation Error`
+`Error := Fault Operation Error | FinalError`
+`Converge := Vulnerability Converge | Failure END`
+
+`Defect := code | specification`
+`Operation := dcl_operation | dvl_operation | dvr_operation | mad_operation | mal_operation | mdl_operation | mus_operation | nrs_operation | tcm_operation | tcv`
+`Fault := address | data | name | size | type`
+`Operand := address | data | name | size | type`
+`FinalError := access | injection | memory | type_compute`
+`dcl_operation = {Declare, Define}`
+`dvl_operation = {Validate, Sanitize}`
+`dvr_operation = {Verify, Correct}`
+`mad_operation = {Initialize, Reposition, Reassign}`
+`mal_operation = {Allocate, Extend, Reallocate-Extend}`
+`mdl_operation = {Deallocate, Reduce, Reallocate-Reduce}`
+`mus_operation = {DOS Operation}`
+`nrs_operation = {Refer, Call}`
+`tcm_operation = {Calculate, Evaluate}`
+`tcv_operation = {Cast, Coerce}`
+`code_defect = {Erroneous Code, Mismatched Operation, Missing Code, Wrong Code}`
+`specification_defect = {Anonymous Scope, Corrupted Policy Data, Missing Modifier, Missing Qualifier, Over-Restrictive Policy, Tampered Policy Data, Under-Restrictive Policy, Wrong Modifier, Wrong Qualifier, Wrong Scope}`
+`name_error = {Missing Overloaded Function, Missing Overridden Function, Wrong Function Resolved, Wrong Generic Function Bound, Wrong Object Resolved, Wrong Object Type Resolved, Wrong Overloaded Function Bound, Wrong Overridden Function Bound}`
+`type_error = {Casted Pointer, Confused Subtype, Incomplete Type, Invalid Data, Mismatched Argument, Wrong Argument Type, Wrong Generic Type, Wrong Index Type, Wrong Object Type Resolved, Wrong Type, Wrong Type Resolved}`
+`address_error = {Dangling Pointer, NULL Pointer, Over Bounds Pointer, Under Bounds Pointer, Untrusted Pointer, Wild Pointer, Wrong Position Pointer}`
+`size_error = {Not Enough Memory Allocated}`
+`injection_final_error = {Command Injection, File Injection, Parameter Injection, Query Injection, Source Code Injection}`
+`memory_final_error = {Buffer Overflow, Buffer Underflow, Double Free, Memory Leak, Memory Overflow, Not Cleared Object, NULL Pointer Dereference, Object Corruption, Type Confusion, Uninitialized Object, Uninitialized Pointer Dereference, Untrusted Pointer Dereference, Use After Free}`
+`access_final_error = {Wrong Access Function, Wrong Access Object, Wrong Access Type}`
+`type_compute_final_error = {Undefined}`
