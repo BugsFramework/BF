@@ -34,12 +34,9 @@ A security failure may be caused by the converging final errors of several vulne
 Using our definitions, we formalize at a high-level a vulnerability description with the following rules (the complete current BF LL1 grammar is available xxxhere).
 
 `START := Vulnerability Converge`
-
 `Vulnerability := Bug Operation Error`
-
 `Error := Fault Operation Error | `
          `FinalError `  
-
 `Converge :=  Vulnerability Converge | `
              `Failure END`
 
