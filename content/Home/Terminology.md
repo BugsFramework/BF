@@ -1,9 +1,9 @@
 ---
 weight: 1
 bookCollapseSection: false
-title: "Concepts"
+title: "Fundamental Concepts"
 ---
-# Concepts
+# Fundamental Concepts
 
 A broad spectrum of software security researchers and practitioners would benefit from clear definitions of the terms bug, fault, error, weakness, vulnerability, and failure in the context of software security. 
 
@@ -34,6 +34,12 @@ A security failure may be caused by the converging final errors of several vulne
 Using our definitions, we formalize at a high-level a vulnerability description with the following rules (the complete current BF LL1 grammar is available xxxhere).
 
 `START := Vulnerability Converge
+
 Vulnerability := Bug Operation Error
-Error := Fault Operation Error | FinalError       
-Converge := Vulnerability Converge | Failure END`
+
+Error := Fault Operation Error | 
+         FinalError   
+
+Converge :=  Vulnerability Converge | 
+             Failure END`
+
