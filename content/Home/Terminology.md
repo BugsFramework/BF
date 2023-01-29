@@ -9,6 +9,8 @@ We need strict definitions of the software security terms: bug, weakness, and vu
 
 We can observe that a security vulnerability leads to a security failure. However, what are the building blocks of a vulnerability? What is the defect in software that triggers a vulnerability? How does it propagate through errors until a final, exploitable error is reached? How do the underlying weaknesses of a vulnerability relate to these propagating errors? 
 
+As part of our work on the NIST Bugs Framework (BF), we clearly defined the software security terms bug, fault, error, weakness, vulnerability, and failure.  Starting from vulnerability, we go towards weakness, bug, and fault, and then towards error, final error, and failure. We model a software security vulnerability as a chain of weaknesses that leads to a security failure. A security bug causes the first weakness, leading to an error. This error becomes the cause (i.e., the fault) for a next weakness and propagates through subsequent weaknesses until a final error is reached, causing the security failure.
+
 A _software security vulnerability_ is a chain of weaknesses linked by causality. It starts with a bug and ends with a final error, which if exploited leads to a security failure.
 
 A _software security weakness_ is a \code{(bug, operation, error)} or \code{(fault, operation, error)} triple. It is an instance of a weakness type that relates to a distinct phase of software execution, the operations specific for that phase and the operands required as input to those operations.
