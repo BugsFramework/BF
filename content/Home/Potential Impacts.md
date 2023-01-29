@@ -3,7 +3,7 @@ weight: 6
 bookCollapseSection: false
 title: "BF Impact"
 ---
-# Potential Impact
+# BF Impact
 
 BF will allow precise communication about software bugs and weaknesses and will help identify exploit mitigation techniques.
 
