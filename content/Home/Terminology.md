@@ -41,5 +41,5 @@ Using our definitions, we formalize at a high-level a vulnerability description 
          `FinalError `  
 
 `Converge :=  Vulnerability Converge | `
-             Failure END`
+             `Failure END`
 
