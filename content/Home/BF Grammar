@@ -1,4 +1,8 @@
-BF Grammar
+weight: 4
+bookCollapseSection: false
+title: "Grammar"
+---
+# BF Grammar
 
 `START := Vulnerability Converge`
 `Vulnerability := Defect Operation Error`
