@@ -1,7 +1,7 @@
 ---
 weight: 6
 bookCollapseSection: false
-title: "Potential Impacts"
+title: "Impacts"
 ---
 # Potential Impacts
 
