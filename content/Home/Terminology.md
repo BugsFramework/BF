@@ -1,7 +1,7 @@
 ---
 weight: 1
 bookCollapseSection: false
-title: "Fundamental Concepts"
+title: "Concepts"
 ---
 # Software Security Concepts
 
