@@ -35,7 +35,7 @@ title: "Team"
         <h3>Collaborators</h3>
       </div>
       <table class="table table-striped" border="0" cellpadding="10px">
-      <tr>
+        <tr>
           <td style="width: 14%;">{{< img src="images/Mehdi.jpg" height="750" >}}</td>
           <td>Mehdi Mirakhorli is an associate professor and Kodak Endowed Scholar at Rochester Institute of Technology
             (RIT). He is the founding director of Software Design and Productivity Laboratory and an affiliated member
@@ -53,8 +53,7 @@ title: "Team"
             compiler construction, high-performance computing, and reversible computation. Dr. Schordan is the Editor of
             the Software Technology column of the IEEE IT Professional magazine. Most recently, he served as General
             Chair of the International Symposium on Code Generation and Optimization (CGO 2018). </td>
-        </tr>
-        
+        </tr>    
         <tr>
           <td>{{< img src="images/SM.png" height="530" >}}</td>
           <td>Sara Moshtari is a PhD student at Rochester Institute of Technology (RIT). She was an instructor at the IT
@@ -64,9 +63,8 @@ title: "Team"
             with different programming languages.
           </td>
         </tr>
-
       </table>
-      <div align="center">
+<!--      <div align="center">
 
         <h3>Former Team Members and Interns</h3>
       </div>
@@ -106,6 +104,6 @@ title: "Team"
             RIT.</td>
         </tr>
       </table>
-    </div>
+    </div> -->
 
 {{< /rawhtml >}}
