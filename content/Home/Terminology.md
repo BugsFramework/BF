@@ -17,7 +17,7 @@ A _software security bug}} is a code or specification defect -- an operation def
 
 A _software fault_ is a name, data, type, address, or size error -- an operand error. Name is in reference to a resolved or bound object, function, data type, or namespace. The others are in reference to an object.
 
-A _software error_ is the result from an operation with a bug or a faulty operand. It becomes a next fault or is a final error. \NISTdisclaimerAsFootnote
+A _software error_ is the result from an operation with a bug or a faulty operand. It becomes a next fault or is a final error.
 
 A _software security final error_ is an exploitable or undefined system behavior that leads to a security failure. 
 
@@ -31,9 +31,10 @@ A security failure may be caused by the converging final errors of several vulne
 
 Using our definitions, we formalize at a high-level a vulnerability description with the following rules (the complete current BF LL1 grammar is available xxxhere).
 
-START := Vulnerability Converge 
+START := Vulnerability Converge
+
 Vulnerability := Bug Operation Error
-Error := Fault Operation Error 
-       | FinalError
-Converge := Vulnerability Converge 
-          | Failure END
+
+Error := Fault Operation Error | FinalError
+       
+Converge := Vulnerability Converge | Failure END
