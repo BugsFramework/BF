@@ -1,5 +1,5 @@
 ---
 weight: 3
 bookCollapseSection: true
-title: "ENC, KMN, VRF"
+title: "Cryptographic Store and Transfer Bugs"
 ---
