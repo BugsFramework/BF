@@ -2,7 +2,7 @@ weight: 4
 bookCollapseSection: false
 title: "Grammar"
 ---
-# BF Grammar
+# BF Grammar -- for _DAT, _INP, MEM clusters only for now
 
 `START := Vulnerability Converge`
 `Vulnerability := Defect Operation Error`
@@ -10,7 +10,7 @@ title: "Grammar"
 `Converge := Vulnerability Converge | Failure END`
 
 `Defect := code | specification`
-`Operation := dcl_operation | dvl_operation | dvr_operation | mad_operation | mal_operation | mdl_operation | mus_operation | nrs_operation | tcm_operation | tcv`
+`Operation := dcl_operation | dvl_operation | dvr_operation | mad_operation | mal_operation | mdl_operation | mus_operation | nrs_operation | tcm_operation | tcv_operation`
 `Fault := address | data | name | size | type`
 `Operand := address | data | name | size | type`
 `FinalError := access | injection | memory | type_compute`
