@@ -16,6 +16,7 @@ BF Grammar for all developed Clusters: Data Type Bugs Classes (_DAT), Input/Outp
 
 `Converge := Vulnerability Converge | Failure END`
 
+
 `Operation := dcl_operation | dvl_operation | dvr_operation | mad_operation | mal_operation | mdl_operation | mus_operation | nrs_operation | tcm_operation | tcv_operation`
 
 `Operand := address | data | name | size | type`
