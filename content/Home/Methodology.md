@@ -9,4 +9,4 @@ The methodology for developing a BF class is as follows (see Fig. 2): First, we 
 
 {{< img src="images/BF methodology.png" height="250" caption="Fig 1. BF Methodology." >}}
 
-We create bugs models to help us identify the BF classes. They show the phases, where particular types of bugs could occur, and the possible flow of operations. For example, the [memory bugs model](/Classes/_MEM/MEMModel.md) shows the identifies phases and operations for memory addressing, allocation, use, and deallocation bugs. It assures the corresponding BF classes MAD, MAL, MUS, and MDL do not overlap in operations.
+We create bugs models to help us identify the BF classes. They show the phases, where particular types of bugs could occur, and the possible flow of operations. For example, the [memory bugs model](/Classes/_MEM/Model.md) shows the identifies phases and operations for memory addressing, allocation, use, and deallocation bugs. It assures the corresponding BF classes MAD, MAL, MUS, and MDL do not overlap in operations.
