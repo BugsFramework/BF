@@ -1,7 +1,7 @@
 ---
 weight: 6
 bookCollapseSection: false
-title: "BF Impact"
+title: "Impact"
 ---
 # BF Impact
 
