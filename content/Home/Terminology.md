@@ -3,9 +3,7 @@ weight: 1
 bookCollapseSection: false
 title: "Concepts"
 ---
-# BF Definitions of Fundamental Software Security Concepts
-
-A broad spectrum of software security researchers and practitioners would benefit from clear definitions of the terms bug, fault, error, weakness, vulnerability, and failure in the context of software security. 
+Software Security Concepts
 
 We can observe that a security vulnerability leads to a security failure. However, what are the building blocks of a vulnerability? What is the defect in software that triggers a vulnerability? How does it propagate through errors until a final, exploitable error is reached? How do the underlying weaknesses of a vulnerability relate to these propagating errors? 
 
