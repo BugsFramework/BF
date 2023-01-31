@@ -1,7 +1,7 @@
 ---
 weight: 1
 bookCollapseSection: false
-title: "BF Concepts"
+title: "Concepts"
 ---
 # BF Definitions of Fundamental Software Security Concepts
 
