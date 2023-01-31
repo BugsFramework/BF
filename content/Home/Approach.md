@@ -1,7 +1,7 @@
 ---
 weight: 4
 bookCollapseSection: false
-title: " BF Approach"
+title: " Approach"
 ---
 # BF Approach
 
