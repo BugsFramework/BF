@@ -1,6 +1,6 @@
 weight: 4
 bookCollapseSection: false
-title: "BF Grammar"
+title: "Grammar"
 ---
 # BF Grammar
 
