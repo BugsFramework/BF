@@ -55,7 +55,7 @@ BF Grammar for all developed Clusters: Data Type Bugs Classes (_DAT), Input/Outp
 `specification_defect = {Anonymous Scope, Corrupted Policy Data, Missing Modifier, Missing Qualifier, Over-Restrictive Policy, Tampered Policy Data, Under-Restrictive Policy, Wrong Modifier, Wrong Qualifier, Wrong Scope}`
 
 
-`data_fault = {Corrupted Data, Flipped Sign, Forbidden Address, Hardcoded Address, Over Range, Reference vs. Object, Single Owned Address, Tampered Data, Under Range, Wrong Argument, Wrong Index, Wrong Size Used}'
+`data_fault = {Corrupted Data, Flipped Sign, Forbidden Address, Hardcoded Address, Over Range, Reference vs. Object, Single Owned Address, Tampered Data, Under Range, Wrong Argument, Wrong Index, Wrong Size Used}`
 
 `type_fault = {Casted Pointer, Confused Subtype, Incomplete Type, Invalid Data, Mismatched Argument, Wrong Argument Type, Wrong Generic Type, Wrong Index Type, Wrong Object Type Resolved, Wrong Type, Wrong Type Resolved}`
 
