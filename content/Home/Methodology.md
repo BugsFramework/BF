@@ -1,7 +1,7 @@
 ---
 weight: 5
 bookCollapseSection: false
-title: "BF Methodology"
+title: "Methodology"
 ---
 # BF Methodology
 
