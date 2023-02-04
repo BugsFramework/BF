@@ -25,8 +25,7 @@ BF Grammar for all developed Clusters: Cryptographic Store and Transfer Bugs Cla
 
 `mad_operation = {Initialize, Reposition, Reassign}`
 
-`
-mal_operation = {Allocate, Extend, Reallocate-Extend}`
+`mal_operation = {Allocate, Extend, Reallocate-Extend}`
 
 `mdl_operation = {Deallocate, Reduce, Reallocate-Reduce}`
 
