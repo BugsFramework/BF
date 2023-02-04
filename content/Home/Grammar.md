@@ -1,3 +1,10 @@
+---
+weight: 5
+bookCollapseSection: false
+title: "Grammar"
+---
+# BF Grammar
+
 BF Grammar for all developed Clusters: Cryptographic Store and Transfer Bugs Classes (_CRY), Data Type Bugs Classes (_DAT), Input/Outpu Bugs Classes (_INP), Memory Bugs Classes (_MEM)
 
 START := Vulnerability Converge
