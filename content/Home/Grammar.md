@@ -15,6 +15,46 @@ Error := Fault Operation Error | FinalError
 
 Converge := Vulnerability Converge | Failure END
 
+===========short===============
+
+BF Grammar for all developed Clusters: Cryptographic Store and Transfer Bugs Classes (_CRY), Data Type Bugs Classes (_DAT), Input/Outpu Bugs Classes (_INP), Memory Bugs Classes (_MEM)
+Bug := code_defect | specification_defect
+code_defect = {Erroneous Code, Mismatched Operation, Missing Code, Wrong Code}
+specification_defect = {Anonymous Scope, Inadequate Algorithm, Missing Modifier, Missing Qualifier, Modified Algorithm, Over-Restrictive Policy, Risky/Broken Algorithm, Under-Restrictive Policy, Weak Algorithm, Weak Protocol, Wrong Modifier, Wrong Qualifier, Wrong Scope}
+Operation = {ACE Operation, Allocate, Calculate, Call, Cast, Clear, Coerce, Correct, Cryptographic Authenticate, Cryptographic Verify, Deallocate, Declare, Decrypt, Define, Dereference, Destroy, Distribute, DOS Operation, Encrypt, Evaluate, Extend, Generate/Select, IEX Operation, IMP Operation, Initialize, Read, Reallocate-Extend, Reallocate-Reduce, Reassign, Reduce, Refer, Reposition, Sanitize, Store, Use, Validate, Verify, Write}
+OperationAttribute := execution_space_attr | mechanism_attr | source_attr
+execution_space_attr = {Admin, Bare-Metal, Kernel, Local, Userland}
+mechanism_attr = {Ad-hoc Bind, Asymmetric Algorithm, Bind, Data Type, Denylist, Digital Signature, Direct, Early Bind, Explicit, Format, Function, Generics, Hash Function + Random Numbers, Implicit, Lambda Expression, Late Bind, Length, Message Authentication Code (MAC), Method, Operator, Other Rules, Overloading, Overriding, Pass In, Pass Out, Procedure, Quantity, Range, Resolve, Safelist, Sequential, Simple, Symmetric Algorithm, Value}
+source_attr = {Codebase, Compiler/Interpreter, Standard Library, Third Party}
+Fault := address_fault | data_fault | name_fault | size_fault | type_fault
+data_fault = {Corrupted Data, Corrupted Policy Data, Flipped Sign, Forbidden Address, Hardcoded Address, Hardcoded Key, Over Range, Reference vs. Object, Single Owned Address, Tampered Data, Tampered Policy Data, Under Range, Unverified Data, Weak Cyphertext, Weak Key, Weak Other Keying Material, Wrong Argument, Wrong Index, Wrong Size Used}
+type_fault = {Casted Pointer, Confused Subtype, Incomplete Type, Invalid Data, Mismatched Argument, Wrong Argument Type, Wrong Generic Type, Wrong Index Type, Wrong Object Type Resolved, Wrong Type, Wrong Type Resolved}
+address_fault = {Dangling Pointer, NULL Pointer, Over Bounds Pointer, Under Bounds Pointer, Untrusted Pointer, Wild Pointer, Wrong Position Pointer}
+size_fault = {Not Enough Memory Allocated}
+name_fault = {Missing Overloaded Function, Missing Overridden Function, Wrong Function Resolved, Wrong Generic Function Bound, Wrong Object Resolved, Wrong Object Type Resolved, Wrong Overloaded Function Bound, Wrong Overridden Function Bound}
+FaultAttribute := AddressAttribute | DataAttribute | NameAttribute | SizeAttribute | TypeAttribute
+DataAttribute := cryptographic_data_kind_attr | data_kind_attr | sensitive_data_kind_attr | sensitivity_attr | state_attr
+TypeAttribute := type_kind_attr
+AddressAttribute := location_attr | ownership_attr
+SizeAttribute := span_attr
+NameAttribute := entity_attr
+entity_attr = {Data Type, Function, Namespace, Object}
+data_kind_attr = {Boolean, Numeric, Pointer, Text}
+state_attr = {Entered, In Use, Stored, Transferred, User Entered}
+type_kind_attr = {Primitive, Structure}
+location_attr = {/other/, Heap, Stack}
+ownership_attr = {None, Shared, Single}
+span_attr = {Huge, Litle, Moderate}
+FinalError := access_fe | data_security_fe | injection_fe | memory_fe | type_compute_fe
+injection_fe = {Command Injection, File Injection, Parameter Injection, Query Injection, Source Code Injection}
+memory_fe = {Buffer Overflow, Buffer Underflow, Double Free, Memory Leak, Memory Overflow, Not Cleared Object, NULL Pointer Dereference, Object Corruption, Type Confusion, Uninitialized Object, Uninitialized Pointer Dereference, Untrusted Pointer Dereference, Use After Free}
+access_fe = {Wrong Access Function, Wrong Access Object, Wrong Access Type}
+type_compute_fe = {Undefined}
+
+===========medium===============
+
+
+===========expanded===============
 
 Bug := code_defect | specification_defect
 
