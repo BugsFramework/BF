@@ -5,167 +5,124 @@ title: "Grammar"
 ---
 # BF Grammar
 
-BF Grammar for all developed Clusters: Cryptographic Store and Transfer Bugs Classes (_CRY), Data Type Bugs Classes (_DAT), Input/Outpu Bugs Classes (_INP), Memory Bugs Classes (_MEM)
+`LL1 Grammar of developed BF Clusters: _CRY, _DAT, _INP, _MEM`
 
-START := Vulnerability Converge
 
-Vulnerability := Bug Operation Error
+`START := Vulnerability Converge`
 
-Error := Fault Operation Error | FinalError
+`Vulnerability:= Bug Operation OA_E`
 
-Converge := Vulnerability Converge | Failure END
+`OA_E := OperationAttribute OA_E`
+`      | Error`
 
-===========short===============
+`Error := Fault FA_O`
+`       | FinalError`
 
-BF Grammar for all developed Clusters: Cryptographic Store and Transfer Bugs Classes (_CRY), Data Type Bugs Classes (_DAT), Input/Outpu Bugs Classes (_INP), Memory Bugs Classes (_MEM)
-Bug := code_defect | specification_defect
-code_defect = {Erroneous Code, Mismatched Operation, Missing Code, Wrong Code}
-specification_defect = {Anonymous Scope, Inadequate Algorithm, Missing Modifier, Missing Qualifier, Modified Algorithm, Over-Restrictive Policy, Risky/Broken Algorithm, Under-Restrictive Policy, Weak Algorithm, Weak Protocol, Wrong Modifier, Wrong Qualifier, Wrong Scope}
-Operation = {ACE Operation, Allocate, Calculate, Call, Cast, Clear, Coerce, Correct, Cryptographic Authenticate, Cryptographic Verify, Deallocate, Declare, Decrypt, Define, Dereference, Destroy, Distribute, DOS Operation, Encrypt, Evaluate, Extend, Generate/Select, IEX Operation, IMP Operation, Initialize, Read, Reallocate-Extend, Reallocate-Reduce, Reassign, Reduce, Refer, Reposition, Sanitize, Store, Use, Validate, Verify, Write}
-OperationAttribute := execution_space_attr | mechanism_attr | source_attr
-execution_space_attr = {Admin, Bare-Metal, Kernel, Local, Userland}
-mechanism_attr = {Ad-hoc Bind, Asymmetric Algorithm, Bind, Data Type, Denylist, Digital Signature, Direct, Early Bind, Explicit, Format, Function, Generics, Hash Function + Random Numbers, Implicit, Lambda Expression, Late Bind, Length, Message Authentication Code (MAC), Method, Operator, Other Rules, Overloading, Overriding, Pass In, Pass Out, Procedure, Quantity, Range, Resolve, Safelist, Sequential, Simple, Symmetric Algorithm, Value}
-source_attr = {Codebase, Compiler/Interpreter, Standard Library, Third Party}
-Fault := address_fault | data_fault | name_fault | size_fault | type_fault
-data_fault = {Corrupted Data, Corrupted Policy Data, Flipped Sign, Forbidden Address, Hardcoded Address, Hardcoded Key, Over Range, Reference vs. Object, Single Owned Address, Tampered Data, Tampered Policy Data, Under Range, Unverified Data, Weak Cyphertext, Weak Key, Weak Other Keying Material, Wrong Argument, Wrong Index, Wrong Size Used}
-type_fault = {Casted Pointer, Confused Subtype, Incomplete Type, Invalid Data, Mismatched Argument, Wrong Argument Type, Wrong Generic Type, Wrong Index Type, Wrong Object Type Resolved, Wrong Type, Wrong Type Resolved}
-address_fault = {Dangling Pointer, NULL Pointer, Over Bounds Pointer, Under Bounds Pointer, Untrusted Pointer, Wild Pointer, Wrong Position Pointer}
-size_fault = {Not Enough Memory Allocated}
-name_fault = {Missing Overloaded Function, Missing Overridden Function, Wrong Function Resolved, Wrong Generic Function Bound, Wrong Object Resolved, Wrong Object Type Resolved, Wrong Overloaded Function Bound, Wrong Overridden Function Bound}
-FaultAttribute := AddressAttribute | DataAttribute | NameAttribute | SizeAttribute | TypeAttribute
-DataAttribute := cryptographic_data_kind_attr | data_kind_attr | sensitive_data_kind_attr | sensitivity_attr | state_attr
-TypeAttribute := type_kind_attr
-AddressAttribute := location_attr | ownership_attr
-SizeAttribute := span_attr
-NameAttribute := entity_attr
-entity_attr = {Data Type, Function, Namespace, Object}
-data_kind_attr = {Boolean, Numeric, Pointer, Text}
-state_attr = {Entered, In Use, Stored, Transferred, User Entered}
-type_kind_attr = {Primitive, Structure}
-location_attr = {/other/, Heap, Stack}
-ownership_attr = {None, Shared, Single}
-span_attr = {Huge, Litle, Moderate}
-FinalError := access_fe | data_security_fe | injection_fe | memory_fe | type_compute_fe
-injection_fe = {Command Injection, File Injection, Parameter Injection, Query Injection, Source Code Injection}
-memory_fe = {Buffer Overflow, Buffer Underflow, Double Free, Memory Leak, Memory Overflow, Not Cleared Object, NULL Pointer Dereference, Object Corruption, Type Confusion, Uninitialized Object, Uninitialized Pointer Dereference, Untrusted Pointer Dereference, Use After Free}
-access_fe = {Wrong Access Function, Wrong Access Object, Wrong Access Type}
-type_compute_fe = {Undefined}
+`FA_O := FaultAttribute FA_O`
+`      | Operation OA_E`
 
-===========medium===============
+`Converge:= Vulnerability Converge`
+`         | Failure END`
 
+____________________________________________________
 
-===========expanded===============
+`Bug := code_defect | specification_defect`
 
-Bug := code_defect | specification_defect
+`code_defect := { Erroneous Code, Mismatched Operation, Missing Code, Wrong Code }`
 
-code_defect = {Erroneous Code, Mismatched Operation, Missing Code, Wrong Code}
+`specification_defect := { Anonymous Scope, Inadequate Algorithm, Missing Modifier, Missing Qualifier, Modified Algorithm, Over-Restrictive Policy, Risky/Broken Algorithm, Under-Restrictive Policy, Weak Algorithm, Weak Protocol, Wrong Modifier, Wrong Qualifier, Wrong Scope }`
 
-specification_defect = {Anonymous Scope, Inadequate Algorithm, Missing Modifier, Missing Qualifier, Modified Algorithm, Over-Restrictive Policy, Risky/Broken Algorithm, Under-Restrictive Policy, Weak Algorithm, Weak Protocol, Wrong Modifier, Wrong Qualifier, Wrong Scope}
+____________________________________________________
 
-Operation := ace_opr ACE_oa | dcl_opr DCL_oa | dom_opr DOM_oa | dos_opr DOS_oa | dvl_opr DVL_oa | dvr_opr DVR_oa | enc_opr ENC_oa | iex_opr IEX_oa | imp_opr IMP_oa | kmn_opr KMN_oa | mad_opr MAD_oa | mal_opr MAL_oa | mdl_opr MDL_oa | mus_opr MUS_oa | nrs_opr NRS_oa | tcm_opr TCM_oa | tcv_opr TCV_oa | tpr_opr TPR_oa | vrf_opr VRF_oa
+`Operations := dcl_opr | dvl_opr | dvr_opr | enc_opr | kmn_opr | mad_opr | mal_opr | mdl_opr | mus_opr | nrs_opr | tcm_opr | tcv_opr | vrf_opr`
 
-dcl_opr = {Declare, Define}
+`dcl_opr := { Declare, Define }`
 
-dvl_opr = {Validate, Sanitize}
+`dvl_opr := { Validate, Sanitize }`
 
-dvr_opr = {Verify, Correct}
+`dvr_opr := { Verify, Correct }`
 
-mad_opr = {Initialize, Reposition, Reassign}
+`enc_opr := { Encrypt, Decrypt }`
 
-mal_opr = {Allocate, Extend, Reallocate-Extend}
+`kmn_opr := { Generate/Select, Store, Distribute, Use, Destroy }`
 
-mdl_opr = {Deallocate, Reduce, Reallocate-Reduce}
+`mad_opr := { Initialize, Reposition, Reassign }`
 
-mus_opr = {DOS Operation}
+`mal_opr := { Allocate, Extend, Reallocate-Extend }`
 
-nrs_opr = {Refer, Call}
+`mdl_opr := { Deallocate, Reduce, Reallocate-Reduce }`
 
-tcm_opr = {Calculate, Evaluate}
+`mus_opr := { Initialize, Dereference, Read, Write, Clear }`
 
-tcv_opr = {Cast, Coerce}
+`nrs_opr := { Refer, Call }`
 
-enc_opr = {Encrypt, Decrypt}
+`tcm_opr := { Calculate, Evaluate }`
 
-vrf_opr = {Cryptographic Authenticate, Cryptographic Verify}
+`tcv_opr := { Cast, Coerce }`
 
-kmn_opr = {Generate/Select, Store, Distribute, Use, Destroy}
+`vrf_opr := { Cryptographic Authenticate, Cryptographic Verify }`
 
-DVL_oa := DVL_execution_space | DVL_mechanism | DVL_source
+____________________________________________________
 
-DVR_oa := DVR_execution_space | DVR_mechanism | DVR_source
+`OperationAttribute := execution_space | mechanism | source_code`
 
-MAD_oa := MAD_execution_space | MAD_mechanism | MAD_source
+`execution_space := { Admin, Bare-Metal, Kernel, Local, Userland }`
 
-MAL_oa := MAL_execution_space | MAL_mechanism | MAL_source
+`mechanism := { Ad-hoc Bind, Asymmetric Algorithm, Bind, Data Type, Denylist, Digital Signature, Direct, Early Bind, Explicit, Format, Function, Generics, Hash Function + Random Numbers, Implicit, Lambda Expression, Late Bind, Length, Message Authentication Code (MAC), Method, Operator, Other Rules, Overloading, Overriding, Pass In, Pass Out, Procedure, Quantity, Range, Resolve, Safelist, Sequential, Simple, Symmetric Algorithm, Value }`
 
-MUS_oa := MUS_execution_space | MUS_mechanism | MUS_source
+`source_code := { Codebase, Compiler/Interpreter, Standard Library, Third Party }`
 
-MDL_oa := MDL_execution_space | MDL_mechanism | MDL_source
+____________________________________________________
 
-DCL_oa := DCL_execution_space | DCL_mechanism | DCL_source
+`FaultAttribute := address | data | name | size | type`
 
-NRS_oa := NRS_execution_space | NRS_mechanism | NRS_source
+`address := { /other/, Heap, None, Shared, Single, Stack }`
 
-TCV_oa := TCV_execution_space | TCV_mechanism | TCV_source
+`data := { Boolean, Credentials, Cryptographic, Digital Certificate, Digital Document, Entered, Hashes, In Use, Keying Material, Numeric, Pointer, Private, Public, Secret, State, Stored, System, Text, Transferred, User Entered }`
 
-TCM_oa := TCM_execution_space | TCM_mechanism | TCM_source
+`name := { Data Type, Function, Namespace, Object }`
 
-ENC_oa := ENC_execution_space | ENC_mechanism | ENC_source
+`size := { Huge, Litle, Moderate }`
 
-VRF_oa := VRF_execution_space | VRF_mechanism | VRF_source
+`type := { Primitive, Structure }`
 
-KMN_oa := KMN_execution_space | KMN_mechanism | KMN_source
+____________________________________________________
 
-execution_space_oa = {Admin, Bare-Metal, Kernel, Local, Userland}
+`FinalError := access | data_security | injection | memory | type_compute`
 
-mechanism_oa = {Ad-hoc Bind, Asymmetric Algorithm, Bind, Data Type, Denylist, Digital Signature, Direct, Early Bind, Explicit, Format, Function, Generics, Hash Function + Random Numbers, Implicit, Lambda Expression, Late Bind, Length, Message Authentication Code (MAC), Method, Operator, Other Rules, Overloading, Overriding, Pass In, Pass Out, Procedure, Quantity, Range, Resolve, Safelist, Sequential, Simple, Symmetric Algorithm, Value}
+`access := { Wrong Access Function, Wrong Access Object, Wrong Access Type }`
 
-source_oa = {Codebase, Compiler/Interpreter, Standard Library, Third Party}
+`data_security := { Revealed Key, Revealed Other Keying Material, Revealed Plaintext }`
 
-Operand := address | data | name | size | type
+`injection := { Command Injection, File Injection, Parameter Injection, Query Injection, Source Code Injection }`
 
-Fault := address_flt Address_fa | data_flt Data_fa | name_flt Name_fa | size_flt Size_fa | type_flt Type_fa
+`memory := { Buffer Overflow, Buffer Underflow, Double Free, Memory Leak, Memory Overflow, Not Cleared Object, NULL Pointer Dereference, Object Corruption, Type Confusion, Uninitialized Object, Uninitialized Pointer Dereference, Untrusted Pointer Dereference, Use After Free }`
 
-data_flt = {Corrupted Data, Corrupted Policy Data, Flipped Sign, Forbidden Address, Hardcoded Address, Hardcoded Key, Over Range, Reference vs. Object, Single Owned Address, Tampered Data, Tampered Policy Data, Under Range, Unverified Data, Weak Cyphertext, Weak Key, Weak Other Keying Material, Wrong Argument, Wrong Index, Wrong Size Used}
+`type_compute := { Undefined }`
 
-type_flt = {Casted Pointer, Confused Subtype, Incomplete Type, Invalid Data, Mismatched Argument, Wrong Argument Type, Wrong Generic Type, Wrong Index Type, Wrong Object Type Resolved, Wrong Type, Wrong Type Resolved}
 
-address_flt = {Dangling Pointer, NULL Pointer, Over Bounds Pointer, Under Bounds Pointer, Untrusted Pointer, Wild Pointer, Wrong Position Pointer}
+==============================================================================
 
-size_flt = {Not Enough Memory Allocated}
 
-name_flt = {Missing Overloaded Function, Missing Overridden Function, Wrong Function Resolved, Wrong Generic Function Bound, Wrong Object Resolved, Wrong Object Type Resolved, Wrong Overloaded Function Bound, Wrong Overridden Function Bound}
+`All Clusters: _CRY, _DAT, _INP, _MEM`
 
-Data_fa := cryptographic_data_kind_fa | data_kind_fa | sensitive_data_kind_fa | sensitivity_fa | state_fa
 
-Type_fa := type_kind_fa
+`All Classes: DCL, DVL, DVR, ENC, KMN, MAD, MAL, MDL, MUS, NRS, TCM, TCV, VRF`
 
-Address_fa := location_fa | ownership_fa
 
-Size_fa := span_fa
+`All Bugs: Anonymous Scope, Erroneous Code, Inadequate Algorithm, Mismatched Operation, Missing Code, Missing Modifier, Missing Qualifier, Modified Algorithm, Over-Restrictive Policy, Risky/Broken Algorithm, Under-Restrictive Policy, Weak Algorithm, Weak Protocol, Wrong Code, Wrong Modifier, Wrong Qualifier, Wrong Scope`
 
-Name_fa := entity_fa
 
-entity_oa = {Data Type, Function, Namespace, Object}
+`All Operations: ACE Operation, Allocate, Calculate, Call, Cast, Clear, Coerce, Correct, Cryptographic Authenticate, Cryptographic Verify, Deallocate, Declare, Decrypt, Define, Dereference, Destroy, Distribute, DOS Operation, Encrypt, Evaluate, Extend, Generate/Select, IEX Operation, IMP Operation, Initialize, Read, Reallocate-Extend, Reallocate-Reduce, Reassign, Reduce, Refer, Reposition, Sanitize, Store, Use, Validate, Verify, Write`
 
-data_kind_oa = {Boolean, Numeric, Pointer, Text}
 
-state_oa = {Entered, In Use, Stored, Transferred, User Entered}
+`All Operation Attrubutes: Ad-hoc Bind, Admin, Asymmetric Algorithm, Bare-Metal, Bind, Codebase, Compiler/Interpreter, Data Type, Denylist, Digital Signature, Direct, Early Bind, Explicit, Format, Function, Generics, Hash Function + Random Numbers, Implicit, Kernel, Lambda Expression, Late Bind, Length, Local, Message Authentication Code (MAC), Method, Operator, Other Rules, Overloading, Overriding, Pass In, Pass Out, Procedure, Quantity, Range, Resolve, Safelist, Sequential, Simple, Standard Library, Symmetric Algorithm, Third Party, Userland, Value`
 
-type_kind_oa = {Primitive, Structure}
 
-location_oa = {/other/, Heap, Stack}
+`All Faults: Casted Pointer, Confused Subtype, Corrupted Data, Corrupted Policy Data, Dangling Pointer, Distorted Value, Flipped Sign, Forbidden Address, Forged Signature, Hardcoded Address, Hardcoded Key, Incomplete Type, Inconsistent Value, Invalid Data, Meaningless Data, Mismatched Argument, Missing Overloaded Function, Missing Overridden Function, Not Enough Memory Allocated, NULL Pointer, Over Bounds Pointer, Over Range, Reference vs. Object, Rounded Value, Single Owned Address, Tampered Data, Tampered Policy Data, Truncated Value, Under Bounds Pointer, Under Range, Untrusted Pointer, Unverified Data, Unverified Key, Unverified Other Keying Material, Weak Cyphertext, Weak Key, Weak Other Keying Material, Wild Pointer, Wrap Around, Wrong Argument, Wrong Argument Type, Wrong Function Resolved, Wrong Generic Function Bound, Wrong Generic Type, Wrong Index, Wrong Index Type, Wrong Object Resolved, Wrong Object Type Resolved, Wrong Overloaded Function Bound, Wrong Overridden Function Bound, Wrong Position Pointer, Wrong Result, Wrong Size Used, Wrong Type, Wrong Type Resolved, Wrong Value`
 
-ownership_oa = {None, Shared, Single}
 
-span_oa = {Huge, Litle, Moderate}
+`All Fault Attrubutes: /other/, Boolean, Credentials, Cryptographic, Data Type, Digital Certificate, Digital Document, Entered, Function, Hashes, Heap, Huge, In Use, Keying Material, Litle, Moderate, Namespace, None, Numeric, Object, Pointer, Primitive, Private, Public, Secret, Shared, Single, Stack, State, Stored, Structure, System, Text, Transferred, User Entered`
 
-FinalError := access | data_security | injection | memory | type_compute
 
-injection_final_error = {Command Injection, File Injection, Parameter Injection, Query Injection, Source Code Injection}
-
-memory_final_error = {Buffer Overflow, Buffer Underflow, Double Free, Memory Leak, Memory Overflow, Not Cleared Object, NULL Pointer Dereference, Object Corruption, Type Confusion, Uninitialized Object, Uninitialized Pointer Dereference, Untrusted Pointer Dereference, Use After Free}
-
-access_final_error = {Wrong Access Function, Wrong Access Object, Wrong Access Type}
-
-type_compute_final_error = {Undefined}
+`All Final Errors: Buffer Overflow, Buffer Underflow, Command Injection, Double Free, File Injection, Memory Leak, Memory Overflow, Not Cleared Object, NULL Pointer Dereference, Object Corruption, Parameter Injection, Query Injection, Revealed Key, Revealed Other Keying Material, Revealed Plaintext, Source Code Injection, Type Confusion, Undefined, Uninitialized Object, Uninitialized Pointer Dereference, Untrusted Pointer Dereference, Use After Free, Wrong Access Function, Wrong Access Object, Wrong Access Type`
