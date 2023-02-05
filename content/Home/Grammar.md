@@ -5,24 +5,20 @@ title: "Grammar"
 ---
 # BF Grammar
 
-`LL1 Grammar of developed BF Clusters: _CRY, _DAT, _INP, _MEM`
+LL1 Grammar of the developed for now BF Clusters: _CRY, _DAT, _INP, _MEM
 
 
 `START := Vulnerability Converge`
 
 `Vulnerability:= Bug Operation OA_E`
 
-`OA_E := OperationAttribute OA_E`
-`      | Error`
+`OA_E := OperationAttribute OA_E | Error`
 
-`Error := Fault FA_O`
-`       | FinalError`
+`Error := Fault FA_O | FinalError`
 
-`FA_O := FaultAttribute FA_O`
-`      | Operation OA_E`
+`FA_O := FaultAttribute FA_O | Operation OA_E`
 
-`Converge:= Vulnerability Converge`
-`         | Failure END`
+`Converge:= Vulnerability Converge | Failure END`
 
 ____________________________________________________
 
@@ -34,7 +30,7 @@ ____________________________________________________
 
 ____________________________________________________
 
-`Operations := dcl_opr | dvl_opr | dvr_opr | enc_opr | kmn_opr | mad_opr | mal_opr | mdl_opr | mus_opr | nrs_opr | tcm_opr | tcv_opr | vrf_opr`
+`Operation := dcl_opr | dvl_opr | dvr_opr | enc_opr | kmn_opr | mad_opr | mal_opr | mdl_opr | mus_opr | nrs_opr | tcm_opr | tcv_opr | vrf_opr`
 
 `dcl_opr := { Declare, Define }`
 
@@ -74,17 +70,17 @@ ____________________________________________________
 
 ____________________________________________________
 
-`FaultAttribute := address | data | name | size | type`
+`Fault := address_fault | data_fault | name_fault | size_fault | type_fault`
 
-`address := { /other/, Heap, None, Shared, Single, Stack }`
+`address_fault := { Dangling Pointer, NULL Pointer, Over Bounds Pointer, Under Bounds Pointer, Untrusted Pointer, Wild Pointer, Wrong Position Pointer }`
 
-`data := { Boolean, Credentials, Cryptographic, Digital Certificate, Digital Document, Entered, Hashes, In Use, Keying Material, Numeric, Pointer, Private, Public, Secret, State, Stored, System, Text, Transferred, User Entered }`
+`data_fault := { Corrupted Data, Corrupted Policy Data, Distorted Value, Flipped Sign, Forbidden Address, Forged Signature, Hardcoded Address, Hardcoded Key, Inconsistent Value, Meaningless Data, Over Range, Reference vs. Object, Rounded Value, Single Owned Address, Tampered Data, Tampered Policy Data, Truncated Value, Under Range, Unverified Data, Unverified Key, Unverified Other Keying Material, Weak Cyphertext, Weak Key, Weak Other Keying Material, Wrap Around, Wrong Argument, Wrong Index, Wrong Result, Wrong Size Used, Wrong Value }`
 
-`name := { Data Type, Function, Namespace, Object }`
+`name_fault := { Missing Overloaded Function, Missing Overridden Function, Wrong Function Resolved, Wrong Generic Function Bound, Wrong Object Resolved, Wrong Object Type Resolved, Wrong Overloaded Function Bound, Wrong Overridden Function Bound }`
 
-`size := { Huge, Litle, Moderate }`
+`size_fault := { Not Enough Memory Allocated }`
 
-`type := { Primitive, Structure }`
+`type_fault := { Casted Pointer, Confused Subtype, Incomplete Type, Invalid Data, Mismatched Argument, Wrong Argument Type, Wrong Generic Type, Wrong Index Type, Wrong Object Type Resolved, Wrong Type, Wrong Type Resolved }`
 
 ____________________________________________________
 
