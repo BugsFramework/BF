@@ -13,7 +13,7 @@ We have developed the following definitions iteratively, while creating the BF s
 
 *   A _software security weakness_ is a \code{(bug, operation, error)} or \code{(fault, operation, error)} triple. It is an instance of a weakness type that relates to a distinct phase of software execution, the operations specific for that phase and the operands required as input to those operations.
 
-*   A _software security bug}} is a code or specification defect -- an operation defect. 
+*   A _software security bug_ is a code or specification defect -- an operation defect. 
 
 *   A _software fault_ is a name, data, type, address, or size error -- an operand error. Name is in reference to a resolved or bound object, function, data type, or namespace. The others are in reference to an object.
 
